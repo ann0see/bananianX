@@ -1,7 +1,7 @@
 #!/bin/bash
 #Install bananianX
 echo "Welcome. It might take some time... If your internet connection is too slow it will take more time. Your Pi will reboot if this script is finished. You can abort it with the command which is shown then."
-sleep 1
+sleep 5
 echo "Updating..."
 apt-get update
 echo "Installing lightdm..."
