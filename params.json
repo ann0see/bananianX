@@ -1,0 +1,6 @@
+{
+  "name": "BananianX",
+  "tagline": "Here is a script, which installs GUI on bananian.",
+  "body": "### Welcome to BananianX\r\nI have created a Skript, which installs GUI on the Banana Pi. Bananian was made for the Banana Pi as Server, so you don´t really need a GUI. But some people would like to have a GUI, so I have made this Skript.\r\n\r\n\r\n### Authors and Contributors\r\nThis was made by @jonisc\r\n\r\n### Support or Contact\r\nYou can contact me here: https://goo.gl/forms/qAs64z4lgxsgUxVp2\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
