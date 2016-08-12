@@ -18,5 +18,5 @@ echo "Setting up X"
 apt-get -qq install systemd-shim
 echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 clear
-echo "Will restart!"
+echo "Will restart in 10 Minutes!"
 shutdown -t 10 -r
