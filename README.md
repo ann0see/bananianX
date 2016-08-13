@@ -1,5 +1,6 @@
 # bananianX
-Here is a script, which installs GUI on bananian. It installs LXDE and openbox<br>
+Here is a script, which installs GUI on bananian. It installs LightDM, LXDE and Openbox.<br>
+Why have I made it? Because I thought there are many people who would like to have a graphical interface. 
 <h2>How to install?</h2>
 1. Download bananianX.<br>
 2. Make it executable: chmod +x bananianX.sh<br>
