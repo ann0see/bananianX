@@ -10,4 +10,4 @@ Why have I made it? Because I thought there are many people who would like to ha
 BananianX is in BETA state currently. So it might not work as expected for now. Currently I haven´t installed it yet, but you can install it and try it now.<br>
 Website: https://jonisc.github.io/bananianX/ 
 #Contact
-You can contact me with this form: https://goo.gl/forms/qAs64z4lgxsgUxVp2
+You can contact me with this form: https://goo.gl/forms/qAs64z4lgxsgUxVp2 or E-Mail: bananianx@t-online.de
