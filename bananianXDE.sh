@@ -138,7 +138,7 @@ clear
 
 echo "Installiere optionale Pakete…"
 
-apt-get install -y xrdp mc midori pcmanfm
+apt-get install -y xrdp mc midori pcmanfm avahi-daemon
 
 echo "Fertig! Werde in 10 Minuten neustarten!"
 shutdown -t 10 -r
