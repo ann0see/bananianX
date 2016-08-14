@@ -134,7 +134,7 @@ echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 
 echo "Installing optional packages…"
 
-apt-get install -y xrdp mc midori pcmanfm avahi-daemon
+apt-get install -y xrdp mc midori pcmanfm avahi-daemon galculator
 
 echo "Finished! Will reboot in 10 Minutes!"
 shutdown -t 10 -r
