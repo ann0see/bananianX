@@ -138,7 +138,7 @@ clear
 
 echo "Installiere optionale Pakete…"
 
-apt-get install -y xrdp mc midori pcmanfm avahi-daemon galculator
+apt-get install -y xrdp mc midori pcmanfm avahi-daemon galculator xarchiver
 
 echo "Fertig! Werde in 10 Minuten neustarten!"
 shutdown -t 10 -r
