@@ -1,20 +1,23 @@
 #!/bin/bash
 #BananianX installer default (English)
 ###################BETA2###################
+#Declare Variables
 
-dialog --backtitle "BananianX installer"  --title "Hi!" --msgbox "Hi. This script will install a GUI on your Banana Pi. Please wait and don go away. You will be able to choose how many packets you want to install." 6 20
-sleep 1
-#Dialog choose BananianX FULL /LIGHT
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
+MESSAGETITLE="Message"
 MENU="Choose one of the following options:"
-
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
          3 "Option 3: Dont reboot after installing BananianX LIGHT (Not recommended)")
+
+dialog --backtitle "$BACKTITLE" \
+--title "$MESSAGETITLE" \ 
+--msgbox "Hi. This script will install a GUI on your Banana Pi. Please wait and don go away. You will be able to choose how many packets you want to install. It might take some time... Your Pi will reboot if this script is finished. You can abort the reboot." $HEIGHT $WIDTH
+clear
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -24,11 +27,7 @@ CHOICE=$(dialog --clear \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
 
-clear
-echo "It might take some time... Your Pi will reboot if this script is finished. You can abort the reboot."
-
-sleep 5
-
+clear
 echo "Updating..."
 
 apt-get update
@@ -52,12 +51,7 @@ apt-get install -y xinit
 echo "Installing openbox Window Manager..."
 
 apt-get install -y openbox
-
-echo "Installing sudo, if you want to add an other user with root posibility..."
-
-apt-get install -y sudo
-
-echo "Setting up X..."
+echo "Setting up X..."
 
 echo "Setting up X, so that a normal user can shutdown..."
 
@@ -77,7 +71,7 @@ echo "Will reboot in 10 minutes"
         2)
 echo "Installing optional packages…"
 
-apt-get install -y xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+apt-get install -y sudo xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
 echo "Finished! Will reboot in 10 Minutes!"
 shutdown -t 10 -r
