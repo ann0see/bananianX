@@ -11,7 +11,7 @@ CHOICE_HEIGHT=4
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
-MESSAGETEXT="Hi. This script will install a GUI on your Banana Pi. Please wait and don go away. You will be able to choose how many packets you want to install. It might take some time... Your Pi will reboot if this script is finished. You can abort the reboot."
+MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. Please wait and don go away. You will be able to choose which version of BananianX you want to install. It might take some time... Your Pi will reboot if this script is finished. You can abort the reboot."
 MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
@@ -39,7 +39,7 @@ echo "Install something ;-)..."
 
 apt-get install -y boxes
 
-echo -e "\n\tUpdating..." | boxes -d dog
+echo -e "\n\tOK. Let's start... Updating..." | boxes -d dog
 
 apt-get update
 
@@ -55,7 +55,8 @@ apt-get install -y lxde-core
 
 echo "OK, install xinit..."
 
-echo "Xinit lets you start the X-Server with startx..."
+echo -e "\n\tXinit lets you start the X-Server with startx..." | boxes -d dog
+
 
 apt-get install -y xinit
 
@@ -64,7 +65,8 @@ echo "Installing openbox Window Manager..."
 apt-get install -y openbox
 echo "Setting up X..."
 
-echo "Setting up X, so that a normal user can shutdown..."
+
+echo -e "\n\Setting up X, so that a normal user can shutdown..." | boxes -d dog
 
 apt-get install -y systemd-shim
 
