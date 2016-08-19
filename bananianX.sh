@@ -9,6 +9,7 @@ CHOICE_HEIGHT=4
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
+MESSAGETEXT="Hi. This script will install a GUI on your Banana Pi. Please wait and don go away. You will be able to choose how many packets you want to install. It might take some time... Your Pi will reboot if this script is finished. You can abort the reboot."
 MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
@@ -16,7 +17,7 @@ OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less featu
 
 dialog --backtitle "$BACKTITLE" \
 --title "$MESSAGETITLE" \ 
---msgbox "Hi. This script will install a GUI on your Banana Pi. Please wait and don go away. You will be able to choose how many packets you want to install. It might take some time... Your Pi will reboot if this script is finished. You can abort the reboot." $HEIGHT $WIDTH
+--msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
 clear
 
 CHOICE=$(dialog --clear \
