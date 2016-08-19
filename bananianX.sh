@@ -28,8 +28,9 @@ CHOICE=$(dialog --clear \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
 
-clear
-echo "Updating..."
+clear
+apt-get install boxes
+echo -e "\n\tUpdating..." | boxes -d dog
 
 apt-get update
 
@@ -63,8 +64,8 @@ echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 clear
 case $CHOICE in
         1)
+echo -e "\n\tWill reboot in 10 minutes..." | boxes -d dog
 shutdown -t 10 -r
-echo "Will reboot in 10 minutes"
 
 
 
@@ -74,7 +75,8 @@ echo "Installing optional packages…"
 
 apt-get install -y sudo xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
-echo "Finished! Will reboot in 10 Minutes!"
+
+echo -e "\n\tLet me reboot your banana in 10 Minutes..." | boxes -d dog
 shutdown -t 10 -r
 
             ;;
