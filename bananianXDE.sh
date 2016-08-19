@@ -12,10 +12,11 @@ BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Hallo"
 MESSAGETEXT="Hallo. Dieses Skript wird eine Grafische Benutzeroberfläche (LIGHTDM, LXDE, Openbox) auf Ihrem Banana Pi installieren. Bitte warten Sie noch kurz, ind gehen noch nicht weg. Sie werden Aussuchen können, welche BananianX Version Sie installieren möchten. Das Skript könnte 'etwas' Zeit benötigen... Ihr Pi wird nach Fertigstellung des Skripts Neustarten. Sie können den Neustart aber innerhalb von 10 Minuten unterbrechen."
-MENU="Wählen Sie eine Option aus:"
-OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
-         2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
-         3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)")
+MENU="Wählen Sie bitte eine Option aus:"
+OPTIONS=(1 "Option 1: BananianX LIGHT (nur die allerwichtigsten Pakete-> weniger Features, dauert nicht so lange wie Option 2, verbraucht weniger Speicherplatz)"
+         2 "Option 2: BananianX FULL (Alles-> mehr Features, dauert laenger, verbraucht mehr Speicherplatz) (Vorschlag)"
+         3 "Option 3: BananianX LIGHT ohne Neustart installieren. (Nicht empfohlen)")
+
 #DIALOG INTRODUCTION
 
 dialog --backtitle "$BACKTITLE" \
@@ -37,47 +38,47 @@ CHOICE=$(dialog --clear \
 clear # CLEAR SCREEN
 #START INSTALLING
 
-echo "Install 'Doggy' ;-)..."
+echo "Installiere 'Doggy' ;-)..."
 
 apt-get install -y boxes
 
-echo -e "\n\tHi! I'm Doggy. I'll install the GUI for you. OK. Let's start..." | boxes -d dog
+echo -e "\n\tHallo! Ich heiße Doggy. Ich werde die GUI für dich Installieren. OK, Los geht's..." | boxes -d dog
 
 sleep 3
 
-echo "Let me update..."
+echo "Lass mich ein Update machen..."
 
 sleep 3
 
-echo -e "\n\tOh, now you can leave me alone. I'll restart the Pi 10 Minutes after the script is finished." | boxes -d dog
+echo -e "\n\tOh, bevor ich's vergesse: Du kannst mich jetzt allein lassen." | boxes -d dog
 
 
 apt-get update
 
-echo "Installing lightdm..."
+echo "Installiere lightdm..."
 
 apt-get install -y lightdm
 
 apt-get install -y lightdm-gtk-greeter
 
-echo "Installing LXDE Core..."
+echo "Installiere LXDE Core..."
 
 apt-get install -y lxde-core
 
-echo "OK, install xinit..."
+echo "Gut, installiere xinit..."
 
-echo -e "\n\tXinit lets you start the X-Server with 'startx' ..." | boxes -d dog
+echo -e "\n\tXinit ermöglicht es den X-Server mit 'startx' zu starten." | boxes -d dog
 
 
 apt-get install -y xinit
 
-echo "Installing openbox Window Manager..."
+echo "Installiere openbox Window Manager..."
 
 apt-get install -y openbox
-echo "Setting up X..."
+echo "Konfiguriere X..."
 
 
-echo -e "\n\Setting up X, so that a normal user can shutdown..." | boxes -d dog
+echo -e "\n\Konfiguriere X, sodass ein normaler Benutzer den Pi Herunterfahren kann." | boxes -d dog
 
 apt-get install -y systemd-shim
 
@@ -86,24 +87,25 @@ echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 clear
 case $CHOICE in
         1)
-echo -e "\n\tOK, I'll reboot your banana in 10 minutes..." | boxes -d dog
+echo -e "\n\Fertig! Ich starte die Banane in 10 Minuten neu." | boxes -d dog
+
 shutdown -t 10 -r
 
 
 
             ;;
         2)
-echo -e "\n\tInstalling optional packages" | boxes -d dog
+echo -e "\n\tSo. Jetzt installiere ich optionale Pakete." | boxes -d dog
 
 apt-get install -y sudo xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
 
-echo -e "\n\tLet's reboot your banana in 10 Minutes..." | boxes -d dog
+echo -e "\n\tFertig! Ich starte die Banane in 10 Minuten neu." | boxes -d dog
 shutdown -t 10 -r
 
             ;;
         3)
-            echo "You chose Option 3: exit"
+            echo "Ok. Dann halt kein Neustart :-("
 
 exit
             ;;
