@@ -1,8 +1,10 @@
 #!/bin/bash
-#BananianX installer default (English)
-###################BETA2###################
-#Declare Variables
 
+###################################
+#BananianX installer by jonisc
+###################################
+
+#DECLARE VARIABLES
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
@@ -14,11 +16,13 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
          3 "Option 3: Dont reboot after installing BananianX LIGHT (Not recommended)")
+#DIALOG INTRODUCTION
 
 dialog --backtitle "$BACKTITLE" \
 --title "$MESSAGETITLE" \ 
 --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
 clear
+#DIALOG CHOOSE OPTIONS
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -28,7 +32,8 @@ CHOICE=$(dialog --clear \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
 
-clear
+clear # CLEAR SCREEN
+#START INSTALLING
 
 echo "Install something ;-)..."
 
