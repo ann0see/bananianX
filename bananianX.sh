@@ -1,6 +1,6 @@
 #!/bin/bash
 #BananianX installer default (English)
-###################BETA###################
+#2##################BETA###################
 
 echo "Hi. This script will install a GUI on your Banana Pi. Please wait and don't go away. You will be able to choose how many packets you want to install. Preparing..."
 echo
