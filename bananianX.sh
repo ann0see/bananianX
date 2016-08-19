@@ -29,7 +29,7 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
 
 clear
-apt-get install boxes
+apt-get install -y boxes
 echo -e "\n\tUpdating..." | boxes -d dog
 
 apt-get update
