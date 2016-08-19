@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###################################
-#BananianX installer by jonisc
+#BananianX installer by jonisc    #
 ###################################
 
 #DECLARE VARIABLES
@@ -15,14 +15,16 @@ MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your
 MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
-         3 "Option 3: Dont reboot after installing BananianX LIGHT (Not recommended)")
+         3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)")
 #DIALOG INTRODUCTION
 
 dialog --backtitle "$BACKTITLE" \
 --title "$MESSAGETITLE" \ 
 --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
-clear
+
 #DIALOG CHOOSE OPTIONS
+
+clear
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -35,11 +37,20 @@ CHOICE=$(dialog --clear \
 clear # CLEAR SCREEN
 #START INSTALLING
 
-echo "Install something ;-)..."
+echo "Install 'Doggy' ;-)..."
 
 apt-get install -y boxes
 
-echo -e "\n\tOK. Let's start... Updating..." | boxes -d dog
+echo -e "\n\tHi! I'm Doggy. I'll install the GUI for you. OK. Let's start..." | boxes -d dog
+
+sleep 3
+
+echo "Let me update..."
+
+sleep 3
+
+echo -e "\n\tOh, now you can leave me alone. I'll restart the Pi 10 Minutes after the script is finished." | boxes -d dog
+
 
 apt-get update
 
@@ -55,7 +66,7 @@ apt-get install -y lxde-core
 
 echo "OK, install xinit..."
 
-echo -e "\n\tXinit lets you start the X-Server with startx..." | boxes -d dog
+echo -e "\n\tXinit lets you start the X-Server with 'startx' ..." | boxes -d dog
 
 
 apt-get install -y xinit
@@ -75,25 +86,25 @@ echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 clear
 case $CHOICE in
         1)
-echo -e "\n\tWill reboot in 10 minutes..." | boxes -d dog
+echo -e "\n\tOK, I'll reboot your banana in 10 minutes..." | boxes -d dog
 shutdown -t 10 -r
 
 
 
             ;;
         2)
-echo "Installing optional packages…"
+echo -e "\n\tInstalling optional packages" | boxes -d dog
 
 apt-get install -y sudo xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
 
-echo -e "\n\tLet me reboot your banana in 10 Minutes..." | boxes -d dog
+echo -e "\n\tLet's reboot your banana in 10 Minutes..." | boxes -d dog
 shutdown -t 10 -r
 
             ;;
         3)
             echo "You chose Option 3: exit"
-clear
+
 exit
             ;;
 esac
