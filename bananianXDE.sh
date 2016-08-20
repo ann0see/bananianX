@@ -9,40 +9,42 @@ HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
 #DECLARE LANGUAGE VARIABLES
-BACKTITLE="BananianX installer"
-TITLE="Install BananianX"
-MESSAGETITLE="Message"
-MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. Please wait and don go away. You will be able to choose which version of BananianX you want to install. It might take some time... Your Pi will reboot 10 min. after this script is finished. You can abort the reboot."
-MENU="Choose one of the following options:"
-OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
-         2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
-         3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)")
-INSTALLDOGGY="Install 'Doggy' ;-)..."
+BACKTITLE="BananianX Installer"
+TITLE="BananianX installieren"
+MESSAGETITLE="Hallo. Dieses Skript wird eine Grafische Benutzeroberfläche (LIGHTDM, LXDE, Openbox) auf Ihrem Banana Pi installieren. Bitte warten Sie noch kurz, und gehen noch nicht weg. Sie werden Aussuchen können, welche BananianX Version Sie installieren möchten. Das Skript könnte 'etwas' Zeit benötigen... Ihr Pi wird nach Fertigstellung des Skripts Neustarten. Sie können den Neustart aber innerhalb von 10 Minuten unterbrechen."
+MENU="Wählen Sie bitte eine Option aus:"
+OPTIONS=(1 "Option 1: BananianX LIGHT (nur die allerwichtigsten Pakete-> weniger Features, dauert nicht so lange wie Option 2, verbraucht weniger Speicherplatz)"
+         2 "Option 2: BananianX FULL (Alles-> mehr Features, dauert laenger, verbraucht mehr Speicherplatz) (Vorschlag)"
+         3 "Option 3: BananianX LIGHT ohne Neustart installieren. (Nicht empfohlen)")
+INSTALLDOGGY="Installiere 'Doggy' ;-)..."
 
-INTRODOGGY="Hi! I'm Doggy. I'll install the GUI for you. OK. Let's start..."
-UPDATEMSG="Let me update..."
+INTRODOGGY="Hallo! Ich heiße Doggy. Ich werde die GUI für dich Installieren. OK, Los geht's.."
 
-LETALONE="Oh, now you can leave me alone. I'll restart the Pi 10 Minutes after the script is finished."
+UPDATEMSG="Lass mich ein Update machen...""
 
-INST_LIGHTDM="Installing lightdm..."
 
-INST_LXDE="Installing LXDE Core..."
+LETALONE="Oh, bevor ich's vergesse: Du kannst mich jetzt allein lassen.""
 
-INST_XINIT="OK, install xinit..."
+INST_LIGHTDM="Installiere lightdm..."
 
-DES_XINIT="Xinit lets you start the X-Server with 'startx'..."
+INST_LXDE="Installiere LXDE Core..."
 
-INST_OPENBOX="Installing openbox window Manager..."
+INST_XINIT="Gut, installiere xinit..."
 
-SETUP_X="Setting up X..."
+DES_XINIT="Xinit ermöglicht es den X-Server mit 'startx' zu starten."
 
-SETUP_X_DES="Setting up X, so that a normal user can shutdown..."
+INST_OPENBOX="Installiere Openbox Fenster Manager.."
 
-RESTART="OK, I'll reboot your banana in 10 minutes..."
+SETUP_X="Konfiguriere X.."
 
-OPTIONAL_P="Installing optional packages..."
+SETUP_X_DES="Konfiguriere X, sodass ein normaler Benutzer den Pi Herunterfahren kann."
 
-NO_RESTART="OK. I won't restart :-("
+RESTART="Fertig! Ich starte die Banane in 10 Minuten neu."
+
+OPTIONAL_P="So, jetzt installiere ich optionale Pakete."
+
+NO_RESTART="Ok. Dann halt kein Neustart :-("
+
 
 ######################################
 

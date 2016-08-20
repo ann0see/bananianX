@@ -22,9 +22,9 @@ INSTALLDOGGY="Install 'Doggy' ;-)..."
 INTRODOGGY="Hi! I'm Doggy. I'll install the GUI for you. OK. Let's start..."
 UPDATEMSG="Let me update..."
 
-INST_LIGHTDM="Installing lightdm..."
-
 LETALONE="Oh, now you can leave me alone. I'll restart the Pi 10 Minutes after the script is finished."
+
+INST_LIGHTDM="Installing lightdm..."
 
 INST_LXDE="Installing LXDE Core..."
 
