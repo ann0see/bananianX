@@ -17,6 +17,8 @@ OPTIONS=(1 "Option 1: BananianX LIGHT (nur die allerwichtigsten Pakete-> weniger
          2 "Option 2: BananianX FULL (Alles-> mehr Features, dauert laenger, verbraucht mehr Speicherplatz) (Vorschlag)"
          3 "Option 3: BananianX LIGHT ohne Neustart installieren. (Nicht empfohlen)")
 
+######################################
+
 #DIALOG INTRODUCTION
 
 dialog --backtitle "$BACKTITLE" \

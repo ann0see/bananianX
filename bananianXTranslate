@@ -44,6 +44,9 @@ OPTIONAL_P="Installing optional packages..."
 
 NO_RESTART="OK. I won't restart :-("
 
+######################################
+
+
 #DIALOG INTRODUCTION
 
 dialog --backtitle "$BACKTITLE" \
