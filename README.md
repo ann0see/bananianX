@@ -6,11 +6,7 @@ Why have I made it? Because I thought there are many people who would like to ha
 2. Make it executable: chmod +x bananianX.sh or chmod +x bananianXDE.sh<br>
 3. Run it ./bananianX.sh or ./bananianXDE.sh
 4. Wait...
-<<<<<<< HEAD
 <br>
-=======
-
->>>>>>> a2a2a28608bddc691852cd2a5be5141adc899fff
 BananianX is in BETA state currently. So it might not work as expected for now. Currently I haven´t installed it yet, but you can install it and try it now.<br>
 Website: https://jonisc.github.io/bananianX/ 
 <br> You can translate BananianX into your Language. Use the file "bananianXTranslate.sh" in the folder "Other Language". Please rename the script to eg. "bananianXFR.sh" for the french translation. I have translated BananianX to my native language german.
