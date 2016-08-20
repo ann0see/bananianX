@@ -1,5 +1,4 @@
 #!/bin/bash
-<<<<<<< HEAD
 
 ###################################
 #BananianX installer by jonisc    #
@@ -11,22 +10,7 @@
 =======
 #BananianX installer default (English)
 ###################BETA###################
-
-echo "Hi. This script will install a GUI on your Banana Pi. Please wait and don't go away. You will be able to choose how many packets you want to install. Preparing..."
-echo
-echo "Please Wait... Installing dialog..."
-apt-get install -y dialog   #install dialog #needed??
-clear
-echo "Dialog installed..."
-echo
-sleep 5
-echo "Let's go!"
-sleep 1
-
-#Dialog choose BananianX FULL /LIGHT
->>>>>>> a2a2a28608bddc691852cd2a5be5141adc899fff
-HEIGHT=15
-WIDTH=40
+HEIGHT=15WIDTH=40
 CHOICE_HEIGHT=4
 #DECLARE LANGUAGE VARIABLES
 BACKTITLE="BananianX installer"
