@@ -78,7 +78,7 @@ apt-get install -y openbox
 echo "Konfiguriere X..."
 
 
-echo -e "\n\Konfiguriere X, sodass ein normaler Benutzer den Pi Herunterfahren kann." | boxes -d dog
+echo -e "\n\tKonfiguriere X, sodass ein normaler Benutzer den Pi Herunterfahren kann." | boxes -d dog
 
 apt-get install -y systemd-shim
 
