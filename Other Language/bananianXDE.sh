@@ -4,6 +4,8 @@
 #BananianX installer by jonisc    #
 ###################################
 
+#VERSION 2
+
 #DECLARE VARIABLES
 HEIGHT=15
 WIDTH=40
