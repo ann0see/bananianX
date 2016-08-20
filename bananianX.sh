@@ -1,36 +1,12 @@
 #!/bin/bash
-<<<<<<< HEAD
-
-###################################
-#BananianX installer by jonisc    #
-###################################
 
 #Version 2
 
-#DECLARE VARIABLES
-HEIGHT=15WIDTH=40
-CHOICE_HEIGHT=4
-#DECLARE LANGUAGE VARIABLES
-=======
-#BananianX installer default (English)
-###################BETA###################
+#Declare Variables
 
-echo "Hi. This script will install a GUI on your Banana Pi. Please wait and don't go away. You will be able to choose how many packets you want to install. Preparing..."
-echo
-echo "Please Wait... Installing dialog..."
-apt-get install -y dialog   #install dialog #needed??
-clear
-echo "Dialog installed..."
-echo
-sleep 5
-echo "Let's go!"
-sleep 1
-
-#Dialog choose BananianX FULL /LIGHT
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
->>>>>>> a2a2a28608bddc691852cd2a5be5141adc899fff
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
@@ -39,6 +15,7 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
          3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)")
+
 INSTALLDOGGY="Install 'Doggy' ;-)..."
 
 INTRODOGGY="Hi! I'm Doggy. I'll install the GUI for you. OK. Let's start..."
@@ -141,7 +118,6 @@ clear
         1)
 echo -e "\n\t$RESTART" | boxes -d dog
 shutdown -t 10 -r
-
 
 
             ;;
