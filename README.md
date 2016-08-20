@@ -9,5 +9,6 @@ Why have I made it? Because I thought there are many people who would like to ha
 <br>
 BananianX is in BETA state currently. So it might not work as expected for now. Currently I haven´t installed it yet, but you can install it and try it now.<br>
 Website: https://jonisc.github.io/bananianX/ 
+<br> You can translate BananianX into your Language. Use the file "bananianXTranslate.sh" in the folder "Other Language". Please rename the script to eg. "bananianXFR.sh" for the french translation. I have translated BananianX to my native language german.
 #Contact
 You can contact me with this form: https://goo.gl/forms/qAs64z4lgxsgUxVp2 or E-Mail: bananianx@t-online.de
