@@ -1,14 +1,14 @@
 #!/bin/bash
 
-###################################
-#BananianX installer by jonisc    #
-###################################
+#####################################
+#BananianXDE installer by jonisc    #
+#####################################
 
 #DECLARE VARIABLES
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
-BACKTITLE="BananianX installer"
+BACKTITLE="BananianX Installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Hallo"
 MESSAGETEXT="Hallo. Dieses Skript wird eine Grafische Benutzeroberfläche (LIGHTDM, LXDE, Openbox) auf Ihrem Banana Pi installieren. Bitte warten Sie noch kurz, ind gehen noch nicht weg. Sie werden Aussuchen können, welche BananianX Version Sie installieren möchten. Das Skript könnte 'etwas' Zeit benötigen... Ihr Pi wird nach Fertigstellung des Skripts Neustarten. Sie können den Neustart aber innerhalb von 10 Minuten unterbrechen."
@@ -95,7 +95,7 @@ shutdown -t 10 -r
 
             ;;
         2)
-echo -e "\n\tSo. Jetzt installiere ich optionale Pakete." | boxes -d dog
+echo -e "\n\tSo, jetzt installiere ich optionale Pakete." | boxes -d dog
 
 apt-get install -y sudo xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
