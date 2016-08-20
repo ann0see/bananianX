@@ -7,20 +7,21 @@
 #VERSION 2
 
 #DECLARE VARIABLES
+
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
 #DECLARE LANGUAGE VARIABLES
 BACKTITLE="BananianX Installer"
 TITLE="BananianX installieren"
-MESSAGETITLE="Hallo. Dieses Skript wird eine Grafische Benutzeroberfläche (LIGHTDM, LXDE, Openbox) auf Ihrem Banana Pi installieren. Bitte warten Sie noch kurz, und gehen noch nicht weg. Sie werden Aussuchen können, welche BananianX Version Sie installieren möchten. Das Skript könnte 'etwas' Zeit benötigen... Ihr Pi wird nach Fertigstellung des Skripts Neustarten. Sie können den Neustart aber innerhalb von 10 Minuten unterbrechen."
+MESSAGETITLE="Hallo. Dieses Skript wird eine grafische Benutzeroberfläche (LIGHTDM, LXDE, Openbox) auf Ihrem Banana Pi installieren. Bitte warten Sie noch kurz, und verlassen Sie den Arbeitsplatz nicht. Sie werden aussuchen können, welche BananianX Version Sie installieren möchten. Das Skript könnte 'etwas' Zeit benötigen... Ihr Pi wird nach Fertigstellung des Skripts neustarten. Sie können den Neustart aber innerhalb von 10 Minuten unterbrechen."
 MENU="Wählen Sie bitte eine Option aus:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (nur die allerwichtigsten Pakete-> weniger Features, dauert nicht so lange wie Option 2, verbraucht weniger Speicherplatz)"
-         2 "Option 2: BananianX FULL (Alles-> mehr Features, dauert laenger, verbraucht mehr Speicherplatz) (Vorschlag)"
+         2 "Option 2: BananianX FULL (Alles-> mehr Features, dauert länger, verbraucht mehr Speicherplatz) (empfohlen)"
          3 "Option 3: BananianX LIGHT ohne Neustart installieren. (Nicht empfohlen)")
 INSTALLDOGGY="Installiere 'Doggy' ;-)..."
 
-INTRODOGGY="Hallo! Ich heiße Doggy. Ich werde die GUI für dich Installieren. OK, Los geht's.."
+INTRODOGGY="Hallo! Ich heiße Doggy. Ich werde die GUI für dich installieren. OK, Los geht's.."
 
 UPDATEMSG="Lass mich ein Update machen...""
 
@@ -39,13 +40,13 @@ INST_OPENBOX="Installiere Openbox Fenster Manager.."
 
 SETUP_X="Konfiguriere X.."
 
-SETUP_X_DES="Konfiguriere X, sodass ein normaler Benutzer den Pi Herunterfahren kann."
+SETUP_X_DES="Konfiguriere X, so dass ein normaler Benutzer den Pi herunterfahren kann."
 
 RESTART="Fertig! Ich starte die Banane in 10 Minuten neu."
 
 OPTIONAL_P="So, jetzt installiere ich optionale Pakete."
 
-NO_RESTART="Ok. Dann halt kein Neustart :-("
+NO_RESTART="Ok, dann halt kein Neustart :-("
 
 
 ######################################
