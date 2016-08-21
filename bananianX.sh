@@ -43,8 +43,8 @@ OPTIONAL_P="Installing optional packages..."
 
 NO_RESTART="OK. I won't restart :-("
 
+#If you don't know what you are doing, don't edit after this line!
 ######################################
-
 
 #DIALOG INTRODUCTION
 
@@ -134,7 +134,6 @@ shutdown -t 10 -r
             ;;
         3)
             echo "$NO_RESTART"
-
 exit
             ;;
 esac

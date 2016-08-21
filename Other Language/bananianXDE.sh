@@ -48,7 +48,7 @@ OPTIONAL_P="So, jetzt installiere ich optionale Pakete."
 
 NO_RESTART="Ok, dann halt kein Neustart :-("
 
-
+#If you don't know what you are doing, don't edit after this line!
 ######################################
 
 

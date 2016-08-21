@@ -13,6 +13,7 @@
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
+##TRANSLATION EDIT BEGIN
 #DECLARE LANGUAGE VARIABLES
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
@@ -22,6 +23,7 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
          3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)")
+
 INSTALLDOGGY="Install 'Doggy' ;-)..."
 
 INTRODOGGY="Hi! I'm Doggy. I'll install the GUI for you. OK. Let's start..."
@@ -49,6 +51,9 @@ OPTIONAL_P="Installing optional packages..."
 
 NO_RESTART="OK. I won't restart :-("
 
+##TRANSLATION EDIT END
+
+#If you don't know what you are doing, don't edit after this line!
 ######################################
 
 
@@ -142,7 +147,6 @@ shutdown -t 10 -r
             ;;
         3)
             echo "$NO_RESTART"
-
 exit
             ;;
 esac
