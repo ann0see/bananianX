@@ -48,6 +48,8 @@ NO_RESTART="OK. I won't restart :-("
 
 #DIALOG INTRODUCTION
 
+clear
+
 dialog --backtitle "$BACKTITLE" \
 --title "$MESSAGETITLE" \ 
 --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
@@ -80,7 +82,6 @@ echo "$UPDATEMSG"
 sleep 3
 
 echo -e "\n\t$LETALONE" | boxes -d dog
-
 
 apt-get update
 

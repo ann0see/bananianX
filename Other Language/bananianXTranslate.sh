@@ -54,6 +54,8 @@ NO_RESTART="OK. I won't restart :-("
 
 #DIALOG INTRODUCTION
 
+clear
+
 dialog --backtitle "$BACKTITLE" \
 --title "$MESSAGETITLE" \ 
 --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH

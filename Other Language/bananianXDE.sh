@@ -54,6 +54,8 @@ NO_RESTART="Ok, dann halt kein Neustart :-("
 
 #DIALOG INTRODUCTION
 
+clear
+
 dialog --backtitle "$BACKTITLE" \
 --title "$MESSAGETITLE" \ 
 --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
