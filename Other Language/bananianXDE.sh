@@ -48,6 +48,8 @@ OPTIONAL_P="So, jetzt installiere ich optionale Pakete."
 
 NO_RESTART="Ok, dann halt kein Neustart :-("
 
+PLS_RESTART="Bitte starten Sie den Pi später mit 'shutdown -r' neu."
+
 #If you don't know what you are doing, don't edit after this line!
 ######################################
 
@@ -141,7 +143,18 @@ shutdown -t 10 -r
 
             ;;
         3)
-            echo "$NO_RESTART"
+            clear
+
+echo "$NO_RESTART"
+
+sleep 2
+
+echo "$PLS_RESTART"
+
+sleep 5
+
+exit
+            ;;
 
 exit
             ;;
