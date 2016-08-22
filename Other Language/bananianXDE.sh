@@ -155,9 +155,6 @@ sleep 5
 
 exit
             ;;
-
-exit
-            ;;
 esac
 
 #Jonathan Smith-Chung
