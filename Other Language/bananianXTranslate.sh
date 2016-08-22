@@ -51,7 +51,7 @@ OPTIONAL_P="Installing optional packages..."
 
 NO_RESTART="OK. I won't restart :-("
 
-PLS_RESTART="But please restart the Pi with 'shutdown -r' later."
+PLS_RESTART="But please restart the Pi with the command (reboot) later."
 
 ##TRANSLATION EDIT END
 
@@ -119,7 +119,8 @@ apt-get install -y xinit
 echo "$INST_OPENBOX"
 
 apt-get install -y openbox
-echo "$SETUP_X"
+
+echo "$SETUP_X"
 
 
 echo -e "\n\t$SETUP_X_DES" | boxes -d dog
@@ -129,7 +130,8 @@ apt-get install -y systemd-shim
 echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 
 clear
-case $CHOICE in
+
+case $CHOICE in
         1)
 echo -e "\n\t$RESTART" | boxes -d dog
 shutdown -t 10 -r
