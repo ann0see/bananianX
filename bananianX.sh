@@ -50,6 +50,10 @@ PLS_RESTART="But please restart the Pi with command (reboot) later."
 
 #DIALOG INTRODUCTION
 
+echo "Getting ready..."
+
+apt-get -qq install dialog
+
 clear
 
 dialog --backtitle "$BACKTITLE" \
