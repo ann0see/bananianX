@@ -101,7 +101,6 @@ echo "$INST_XINIT"
 
 echo -e "\n\t$DES_XINIT" | boxes -d dog
 
-
 apt-get install -y xinit
 
 echo "$INST_OPENBOX"
@@ -110,14 +109,12 @@ apt-get install -y openbox
 
 echo "$SETUP_X"
 
-
 echo -e "\n\t$SETUP_X_DES" | boxes -d dog
 
 apt-get install -y systemd-shim
 
 echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 
-clear
 
 case $CHOICE in
         1)
