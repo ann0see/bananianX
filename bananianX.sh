@@ -56,10 +56,9 @@ apt-get -qq install dialog
 
 clear
 
-dialog --backtitle "$BACKTITLE" \
---title "$MESSAGETITLE" \ 
---msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
-
+echo "Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. Please wait and don't leave the Pi alone for now. You will be able to choose which version of BananianX you want to install. It might take some time... After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot.
+sleep 10
+clear
 #DIALOG CHOOSE OPTIONS
 
 clear
