@@ -122,7 +122,7 @@ echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 case $CHOICE in
         1)
 echo -e "\n\t$RESTART" | boxes -d dog
-shutdown -t 10 -r
+shutdown -r 10
 
 
             ;;
@@ -133,7 +133,7 @@ apt-get install -y sudo gparted leafpad xrdp mc iceweasel avahi-daemon xarchiver
 
 
 echo -e "\n\t$RESTART" | boxes -d dog
-shutdown -t 10 -r
+shutdown -r 10
 
             ;;
         3)
