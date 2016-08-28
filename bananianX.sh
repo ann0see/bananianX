@@ -130,7 +130,7 @@ shutdown -t 10 -r
         2)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
 
-apt-get install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+apt-get install -y sudo gparted leafpad xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
 
 echo -e "\n\t$RESTART" | boxes -d dog
