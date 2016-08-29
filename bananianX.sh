@@ -77,7 +77,7 @@ clear # CLEAR SCREEN
 
 echo "$INSTALLDOGGY"
 
-apt-get install -y boxes
+apt install -y boxes
 
 echo -e "\n\t$INTRODOGGY" | boxes -d dog
 
@@ -89,33 +89,37 @@ sleep 3
 
 echo -e "\n\t$LETALONE" | boxes -d dog
 
-apt-get update
+apt update
+
+echo "Install X server Xorg"
+
+apt install -y xorg
 
 echo "$INST_LIGHTDM"
 
-apt-get install -y lightdm
+apt install -y lightdm
 
-apt-get install -y lightdm-gtk-greeter
+apt install -y lightdm-gtk-greeter
 
 echo "$INST_LXDE"
 
-apt-get install -y lxde-core
+apt install -y lxde-core
 
 echo "$INST_XINIT"
 
 echo -e "\n\t$DES_XINIT" | boxes -d dog
 
-apt-get install -y xinit
+apt install -y xinit
 
 echo "$INST_OPENBOX"
 
-apt-get install -y openbox
+apt install -y openbox
 
 echo "$SETUP_X"
 
 echo -e "\n\t$SETUP_X_DES" | boxes -d dog
 
-apt-get install -y systemd-shim
+apt install -y systemd-shim
 
 echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 
@@ -130,7 +134,7 @@ shutdown -t 10 -r
         2)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
 
-apt-get install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
 
 echo -e "\n\t$RESTART" | boxes -d dog
