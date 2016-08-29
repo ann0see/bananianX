@@ -52,6 +52,7 @@ PLS_RESTART="But please restart the Pi with command (reboot) later."
 
 echo "Getting ready..."
 
+<<<<<<< HEAD
 apt-get -qq install dialog
 
 clear
@@ -158,3 +159,105 @@ exit
 esac
 
 #jonisc
+=======
+apt-get -qq install dialog
+
+clear
+
+echo "Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. Please wait and don't leave the Pi alone for now. You will be able to choose which version of BananianX you want to install. It might take some time... After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot.
+sleep 10
+clear
+#DIALOG CHOOSE OPTIONS
+
+clear
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear # CLEAR SCREEN
+#START INSTALLING
+
+echo "$INSTALLDOGGY"
+
+apt-get install -y boxes
+
+echo -e "\n\t$INTRODOGGY" | boxes -d dog
+
+sleep 3
+
+echo "$UPDATEMSG"
+
+sleep 3
+
+echo -e "\n\t$LETALONE" | boxes -d dog
+
+apt-get update
+
+echo "$INST_LIGHTDM"
+
+apt-get install -y lightdm
+
+apt-get install -y lightdm-gtk-greeter
+
+echo "$INST_LXDE"
+
+apt-get install -y lxde-core
+
+echo "$INST_XINIT"
+
+echo -e "\n\t$DES_XINIT" | boxes -d dog
+
+apt-get install -y xinit
+
+echo "$INST_OPENBOX"
+
+apt-get install -y openbox
+
+echo "$SETUP_X"
+
+echo -e "\n\t$SETUP_X_DES" | boxes -d dog
+
+apt-get install -y systemd-shim
+
+echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
+
+
+case $CHOICE in
+        1)
+echo -e "\n\t$RESTART" | boxes -d dog
+shutdown -r 10
+
+
+            ;;
+        2)
+echo -e "\n\t$OPTIONAL_P" | boxes -d dog
+
+apt-get install -y sudo gparted leafpad xrdp mc iceweasel avahi-daemon xarchiver galculator
+
+
+echo -e "\n\t$RESTART" | boxes -d dog
+shutdown -r 10
+
+            ;;
+        3)
+            
+clear
+
+echo "$NO_RESTART"
+
+sleep 2
+
+echo "$PLS_RESTART"
+
+sleep 5
+
+exit
+            ;;
+esac
+#jonisc
+>>>>>>> 8fb2f93ea0e110fbef5264a536ebe0b547a93f3e
