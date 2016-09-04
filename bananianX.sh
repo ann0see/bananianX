@@ -66,9 +66,7 @@ apt -qq install dialog
 
 clear
 
-dialog --backtitle "$BACKTITLE" \
---title "$MESSAGETITLE" \ 
---msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
+dialog --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
 
 #DIALOG CHOOSE OPTIONS
 
