@@ -4,7 +4,7 @@
 
 #Declare Variables
 
-HEIGHT=15
+HEIGHT=20
 WIDTH=60
 CHOICE_HEIGHT=4
 BACKTITLE="BananianX installer"
