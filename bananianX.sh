@@ -87,9 +87,11 @@ case $CHOICE in
         
 0)
 clear
+
 echo "Exit..."
 
 exit
+
 ;;
 
 1)
@@ -107,10 +109,14 @@ echo "Hi! I'll install FULL!"
 echo "No restart after FULL installation is finished."
 
 ;;
+
 *) 
-echo "Unknown error. Variable 'CHOICE' has unexpected content. Install BananianX LIGHT without reboot!..."
+echo "WARNING: Variable 'CHOICE' has unexpected content. Install BananianX LIGHT without reboot!..."
+
 ;;
+
 esac
+
 #START INSTALLING
 
 echo "$INSTALLDOGGY"
@@ -207,6 +213,12 @@ echo "$PLS_RESTART"
 sleep 5
 
 exit
+
+;;
+
+
+*) 
+echo "WARNING: Variable 'CHOICE' has unexpected content."
 
 ;;
 
