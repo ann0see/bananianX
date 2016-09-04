@@ -18,7 +18,8 @@ GETREADY="Getting ready..."
 MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
-         3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)")
+         3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)"
+4 "Install BananianX FULL without resboot. (Not recommended)")
 
 INSTALLDOGGY="Install 'Doggy' ;-)..."
 
@@ -81,6 +82,35 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
 
 clear # CLEAR SCREEN
+
+case $CHOICE in
+        
+0)
+clear
+echo "Exit..."
+
+exit
+;;
+
+1)
+echo "Hi! I'll install LIGHT"
+
+
+            ;;
+        2)
+echo "Hi! I'll install FULL!"
+            ;;
+        3)
+            echo "Ok. No restart after LIGHT installation is finished"
+            ;;
+4) 
+echo "No restart after FULL installation is finished."
+
+;;
+*) 
+echo "Unknown error. Variable 'CHOICE' has unexpected content. Install BananianX LIGHT without reboot!..."
+;;
+esac
 #START INSTALLING
 
 echo "$INSTALLDOGGY"
@@ -161,6 +191,25 @@ sleep 5
 
 exit
             ;;
+4) 
+echo -e "\n\t$OPTIONAL_P" | boxes -d dog
+
+apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+
+clear
+
+echo "$NO_RESTART"
+
+sleep 2
+
+echo "$PLS_RESTART"
+
+sleep 5
+
+exit
+
+;;
+
 esac
 
 #jonisc
