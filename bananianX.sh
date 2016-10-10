@@ -1,6 +1,15 @@
-#!/bin/bash
+#!/bin/bash 
+# Init 
+FILE="/tmp/out.$$" 
+GREP="/bin/grep" 
+#.... 
+# Make sure only root can run our script 
+if [[ $EUID -ne 0 ]]; then 
+   echo "This script must be run as root. please try 'sudo ./bananianX.sh'" 1>&2 
+   exit 1 
+fi 
 
-#Version 2.1
+#Version 2.2
 
 #Declare Variables
 
@@ -90,7 +99,7 @@ clear
 
 echo "Exit..."
 
-exit
+exit 130
 
 ;;
 
@@ -195,7 +204,7 @@ echo "$PLS_RESTART"
 
 sleep 5
 
-exit
+exit 0
             ;;
 4) 
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
@@ -212,14 +221,14 @@ echo "$PLS_RESTART"
 
 sleep 5
 
-exit
+exit 0
 
 ;;
 
 
 *) 
 echo "WARNING: Variable 'CHOICE' has unexpected content."
-
+exit 21
 ;;
 
 esac
