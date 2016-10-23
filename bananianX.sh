@@ -13,9 +13,9 @@ fi
 
 #Declare Variables
 
-HEIGHT=20
-WIDTH=60
-CHOICE_HEIGHT=4
+HEIGHT=0
+WIDTH=0
+CHOICE_HEIGHT=0
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
@@ -66,7 +66,7 @@ PLS_RESTART="But please restart the Pi with command (reboot) later."
 
 echo "$MESSAGETEXT"
 
-sleep 10
+sleep 4
 
 clear
 
@@ -82,19 +82,12 @@ dialog --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
 
 clear
 
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
+CHOICE=$(dialog --clear --backtitle "$BACKTITLE" --title "$TITLE" --menu "$MENU" $HEIGHT $WIDTH$CHOICE_HEIGHT "${OPTIONS[@]}" 2>&1 >/dev/tty)
 
 clear # CLEAR SCREEN
 
 case $CHOICE in
-        
-0)
+"")
 clear
 
 echo "Exit..."
@@ -105,14 +98,12 @@ exit 130
 
 1)
 echo "Hi! I'll install LIGHT"
-
-
-            ;;
-        2)
+ ;;
+2)
 echo "Hi! I'll install FULL!"
             ;;
-        3)
-            echo "Ok. No restart after LIGHT installation is finished"
+3)
+echo "Ok. No restart after LIGHT installation is finished"
             ;;
 4) 
 echo "No restart after FULL installation is finished."
@@ -168,11 +159,11 @@ apt install -y xinit
 
 echo "$SETUP_X"
 
-echo -e "\n\t$SETUP_X_DES" | boxes -d dog
+#echo -e "\n\t$SETUP_X_DES" | boxes -d dog
 
-apt install -y systemd-shim
+#apt install -y systemd-shim
 
-echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
+#echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 
 
 case $CHOICE in
