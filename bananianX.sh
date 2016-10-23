@@ -157,7 +157,7 @@ apt install -y xinit
 
 #apt install -y openbox
 
-echo "$SETUP_X"
+#echo "$SETUP_X"
 
 #echo -e "\n\t$SETUP_X_DES" | boxes -d dog
 
