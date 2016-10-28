@@ -71,6 +71,10 @@ sleep 4
 clear
 
 echo "$GETREADY"
+echo "Please wait... this might take some time..."
+echo "Please do not leave this skript unattended until you are told to do so..."
+sleep 1
+apt -qq update
 
 apt -qq install dialog
 
@@ -127,31 +131,31 @@ echo -e "\n\t$INTRODOGGY" | boxes -d dog
 
 sleep 3
 
-echo "$UPDATEMSG"
+#echo "$UPDATEMSG"
 
-sleep 3
+#sleep 3
 
 echo -e "\n\t$LETALONE" | boxes -d dog
 
-apt update
+#apt update
 
 echo "Install X server Xorg"
 
-apt install -y xorg
+#apt install -y xorg
 
 echo "$INST_LIGHTDM"
 
-apt install -y lightdm
+#apt install -y lightdm
 
 echo "$INST_LXDE"
 
-apt install -y lxde-core
+#apt install -y lxde-core
 
 echo "$INST_XINIT"
 
 echo -e "\n\t$DES_XINIT" | boxes -d dog
 
-apt install -y xinit
+#apt install -y xinit
 
 #echo "$INST_OPENBOX"
 
@@ -176,7 +180,7 @@ shutdown -r 10
         2)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
 
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+#apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
 
 echo -e "\n\t$RESTART" | boxes -d dog
@@ -200,7 +204,7 @@ exit 0
 4) 
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
 
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+#apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 
 clear
 
