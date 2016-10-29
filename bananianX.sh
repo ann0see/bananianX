@@ -1,13 +1,13 @@
-#!/bin/bash 
-# Init 
-FILE="/tmp/out.$$" 
-GREP="/bin/grep" 
-#.... 
-# Make sure only root can run our script 
-if [[ $EUID -ne 0 ]]; then 
+#!/bin/bash
+# Init
+FILE="/tmp/out.$$"
+GREP="/bin/grep"
+#....
+# Make sure only root can run our script
+if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root. please try 'sudo ./bananianX.sh'" 1>&2 
-   exit 1 
-fi 
+   exit 1
+fi
 
 #Version 2.2
 
@@ -65,37 +65,27 @@ PLS_RESTART="But please restart the Pi with command (reboot) later."
 #DIALOG INTRODUCTION
 
 echo "$MESSAGETEXT"
-
 sleep 4
-
-clear
-
 echo "$GETREADY"
-
-apt -qq install dialog
-
+echo "Please wait... this might take some time..."
+echo "Please do not leave this skript unattended until you are told to do so..."
+sleep 1
+echo "Reloading packet list..."
+#apt -qq update
+#apt -qq install dialog
 clear
-
 dialog --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
 
 #DIALOG CHOOSE OPTIONS
-
 clear
-
 CHOICE=$(dialog --clear --backtitle "$BACKTITLE" --title "$TITLE" --menu "$MENU" $HEIGHT $WIDTH $CHOICE_HEIGHT "${OPTIONS[@]}" 2>&1 >/dev/tty)
-
 clear # CLEAR SCREEN
-
 case $CHOICE in
 "")
 clear
-
 echo "Exit..."
-
 exit 130
-
 ;;
-
 1)
 echo "Hi! I'll install LIGHT"
  ;;
@@ -105,123 +95,68 @@ echo "Hi! I'll install FULL!"
 3)
 echo "Ok. No restart after LIGHT installation is finished"
             ;;
-4) 
+4)
 echo "No restart after FULL installation is finished."
-
 ;;
-
-*) 
-echo "WARNING: Variable 'CHOICE' has unexpected content. Install BananianX LIGHT without reboot!..."
-
+*)
+echo "WARNING: Variable 'CHOICE' has unexpected content: $CHOICE Install BananianX LIGHT without reboot!..."
 ;;
-
 esac
-
 #START INSTALLING
-
 echo "$INSTALLDOGGY"
-
 apt install -y boxes
-
 echo -e "\n\t$INTRODOGGY" | boxes -d dog
-
 sleep 3
-
-echo "$UPDATEMSG"
-
-sleep 3
-
+#echo "$UPDATEMSG"
+#sleep 3
 echo -e "\n\t$LETALONE" | boxes -d dog
-
-apt update
-
+#apt update
 echo "Install X server Xorg"
-
-apt install -y xorg
-
+#apt install -y xorg
 echo "$INST_LIGHTDM"
-
-apt install -y lightdm
-
+#apt install -y lightdm
 echo "$INST_LXDE"
-
-apt install -y lxde-core
-
+#apt install -y lxde-core
 echo "$INST_XINIT"
-
 echo -e "\n\t$DES_XINIT" | boxes -d dog
-
-apt install -y xinit
-
+#apt install -y xinit
 #echo "$INST_OPENBOX"
-
 #apt install -y openbox
-
 #echo "$SETUP_X"
-
 #echo -e "\n\t$SETUP_X_DES" | boxes -d dog
-
 #apt install -y systemd-shim
-
 #echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
-
-
 case $CHOICE in
-        1)
+1)
 echo -e "\n\t$RESTART" | boxes -d dog
-shutdown -r 10
-
-
-            ;;
-        2)
-echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
-
-
-echo -e "\n\t$RESTART" | boxes -d dog
-shutdown -r 10
-
-            ;;
-        3)
-            
-clear
-
-echo "$NO_RESTART"
-
-sleep 2
-
-echo "$PLS_RESTART"
-
-sleep 5
-
-exit 0
-            ;;
-4) 
-echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
-
-clear
-
-echo "$NO_RESTART"
-
-sleep 2
-
-echo "$PLS_RESTART"
-
-sleep 5
-
-exit 0
-
+#shutdown -r 10
 ;;
-
-
-*) 
+2)
+echo -e "\n\t$OPTIONAL_P" | boxes -d dog
+#apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+echo -e "\n\t$RESTART" | boxes -d dog
+#shutdown -r 10
+ ;;
+3)
+echo "$NO_RESTART"
+sleep 2
+echo "$PLS_RESTART"
+sleep 5
+exit 0
+;;
+4)
+echo -e "\n\t$OPTIONAL_P" | boxes -d dog
+#apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+echo "$NO_RESTART"
+sleep 2
+echo "$PLS_RESTART"
+sleep 5
+exit 0
+;;
+*)
 echo "WARNING: Variable 'CHOICE' has unexpected content."
 exit 21
 ;;
-
 esac
 
 #jonisc
