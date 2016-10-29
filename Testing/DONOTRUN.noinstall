@@ -148,27 +148,17 @@ exit 0
 4)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
 #apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
-
 clear
-
 echo "$NO_RESTART"
-
 sleep 2
-
 echo "$PLS_RESTART"
-
 sleep 5
-
 exit 0
-
 ;;
-
-
 *) 
 echo "WARNING: Variable 'CHOICE' has unexpected content."
 exit 21
 ;;
-
 esac
 
 #jonisc
