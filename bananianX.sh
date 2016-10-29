@@ -74,7 +74,7 @@ echo "Reloading packet list..."
 apt -qq update
 apt -qq install dialog
 clear
-dialog --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
+dialog --backtitle "$BACKTITLE" --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
 
 #DIALOG CHOOSE OPTIONS
 clear
