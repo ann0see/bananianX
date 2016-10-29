@@ -71,8 +71,8 @@ echo "Please wait... this might take some time..."
 echo "Please do not leave this skript unattended until you are told to do so..."
 sleep 1
 echo "Reloading packet list..."
-#apt -qq update
-#apt -qq install dialog
+apt -qq update
+apt -qq install dialog
 clear
 dialog --msgbox "$MESSAGETEXT" $HEIGHT $WIDTH
 
@@ -82,7 +82,6 @@ CHOICE=$(dialog --clear --backtitle "$BACKTITLE" --title "$TITLE" --menu "$MENU"
 clear # CLEAR SCREEN
 case $CHOICE in
 "")
-clear
 echo "Exit..."
 exit 130
 ;;
@@ -107,21 +106,18 @@ echo "$INSTALLDOGGY"
 apt install -y boxes
 echo -e "\n\t$INTRODOGGY" | boxes -d dog
 sleep 3
-#echo "$UPDATEMSG"
-#sleep 3
 echo -e "\n\t$LETALONE" | boxes -d dog
-#apt update
 echo "Install X server Xorg"
-#apt install -y xorg
+apt install -y xorg
 echo "$INST_LIGHTDM"
-#apt install -y lightdm
+apt install -y lightdm
 echo "$INST_LXDE"
-#apt install -y lxde-core
+apt install -y lxde-core
 echo "$INST_XINIT"
 echo -e "\n\t$DES_XINIT" | boxes -d dog
-#apt install -y xinit
-#echo "$INST_OPENBOX"
-#apt install -y openbox
+apt install -y xinit
+echo "$INST_OPENBOX"
+apt install -y openbox
 #echo "$SETUP_X"
 #echo -e "\n\t$SETUP_X_DES" | boxes -d dog
 #apt install -y systemd-shim
@@ -129,13 +125,13 @@ echo -e "\n\t$DES_XINIT" | boxes -d dog
 case $CHOICE in
 1)
 echo -e "\n\t$RESTART" | boxes -d dog
-#shutdown -r 10
+shutdown -r 10
 ;;
 2)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-#apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 echo -e "\n\t$RESTART" | boxes -d dog
-#shutdown -r 10
+shutdown -r 10
  ;;
 3)
 echo "$NO_RESTART"
@@ -146,7 +142,7 @@ exit 0
 ;;
 4)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-#apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 echo "$NO_RESTART"
 sleep 2
 echo "$PLS_RESTART"
