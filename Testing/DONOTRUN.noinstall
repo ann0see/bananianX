@@ -66,11 +66,11 @@ PLS_RESTART="But please restart the Pi with command (reboot) later."
 
 echo "$MESSAGETEXT"
 sleep 4
-clear
 echo "$GETREADY"
 echo "Please wait... this might take some time..."
 echo "Please do not leave this skript unattended until you are told to do so..."
 sleep 1
+echo "Reloading packet list..."
 apt -qq update
 apt -qq install dialog
 clear
