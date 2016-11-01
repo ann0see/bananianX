@@ -20,7 +20,7 @@ BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
 
-MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. Please wait and don't leave the Pi alone for now. You will be able to choose which version of BananianX you want to install. It might take some time... After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
+MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. It may take some time, but please wait and don't leave the Pi alone for now. You can leave the installer alone if you're told so. There are 2 Versions of BananianX: the lightweighter BananianX LIGHT or BananianX FULL with more features. After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
 
 GETREADY="Getting ready..."
 
@@ -28,7 +28,7 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
          2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
          3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)"
-4 "Install BananianX FULL without resboot. (Not recommended)")
+4 "Install BananianX FULL without reboot. (Not recommended)")
 
 INSTALLDOGGY="Install 'Doggy' ;-)..."
 
