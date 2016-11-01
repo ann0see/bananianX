@@ -129,7 +129,7 @@ shutdown -r 10
 ;;
 2)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator gksudo
 echo -e "\n\t$RESTART" | boxes -d dog
 shutdown -r 10
  ;;
@@ -142,7 +142,7 @@ exit 0
 ;;
 4)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator
+apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator gksudo
 echo "$NO_RESTART"
 sleep 2
 echo "$PLS_RESTART"
