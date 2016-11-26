@@ -5,17 +5,18 @@ GREP="/bin/grep"
 #....
 # Make sure only root can run our script
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root. please try 'sudo ./bananianX.sh'" 1>&2 
+   echo "This script must be run as root. Please try 'sudo ./bananianX.sh'" 1>&2 
    exit 1
 fi
 
 #Version 2.2
 
 #Declare Variables
-
+# How high is our dialog window:
 HEIGHT=0
 WIDTH=0
 CHOICE_HEIGHT=0
+# Language Variables
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
@@ -59,6 +60,9 @@ NO_RESTART="OK. I won't restart :-("
 
 PLS_RESTART="But please restart the Pi with command (reboot) later."
 
+# Declare install variables
+# Optional packages:
+OPTPACK_APT=sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator gksudo
 #If you don't know what you are doing, don't edit after this line!
 ######################################
 
@@ -129,7 +133,7 @@ shutdown -r 10
 ;;
 2)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator gksudo
+apt install -y $OPTPACK_APT
 echo -e "\n\t$RESTART" | boxes -d dog
 shutdown -r 10
  ;;
@@ -142,7 +146,7 @@ exit 0
 ;;
 4)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-apt install -y sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator gksudo
+apt install -y $OPTPACK_APT
 echo "$NO_RESTART"
 sleep 2
 echo "$PLS_RESTART"
