@@ -19,6 +19,7 @@ shutdown -h -P now
 2)reboot
 clear
            ;;
+*) echo "ERROR: Variable 'choice' contains unexpected content. Doing nothing. Have you installed 'dialog'? If not try installing it with 'apt install dialog'"
 esac
 
 #jonisc
