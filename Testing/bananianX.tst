@@ -99,16 +99,16 @@ echo -e "\n\t$INTRODOGGY" | boxes -d dog
 sleep 3
 echo -e "\n\t$LETALONE" | boxes -d dog
 echo "Install X server Xorg"
-apt install -y xorg
+apt search xorg
 echo "$INST_LIGHTDM"
-apt install -y lightdm
+apt search lightdm
 echo "$INST_LXDE"
-apt install -y lxde-core
+apt search lxde-core
 echo "$INST_XINIT"
 echo -e "\n\t$DES_XINIT" | boxes -d dog
-apt install -y xinit
+apt search xinit
 echo "$INST_OPENBOX"
-apt install -y openbox
+apt search openbox
 # uncomment the following lines, if your init system is systemd. If you don't know, let it like it is.
 #echo "$SETUP_X"
 #echo -e "\n\t$SETUP_X_DES" | boxes -d dog
@@ -121,7 +121,7 @@ shutdown -r 10
 ;;
 2)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-apt install -y $OPTPACK_APT
+apt search $OPTPACK_APT
 echo -e "\n\t$RESTART" | boxes -d dog
 shutdown -r 10
 ;;
@@ -134,7 +134,7 @@ exit 0
 ;;
 4)
 echo -e "\n\t$OPTIONAL_P" | boxes -d dog
-apt install -y $OPTPACK_APT
+apt search $OPTPACK_APT
 echo "$NO_RESTART"
 sleep 2
 echo "$PLS_RESTART"
