@@ -106,6 +106,7 @@ echo -e "\n\t$DES_XINIT" | boxes -d dog
 apt install -y xinit
 echo "$INST_OPENBOX"
 apt install -y openbox
+# uncomment the following lines, if your init system is systemd. If you don't know, let it like it is.
 #echo "$SETUP_X"
 #echo -e "\n\t$SETUP_X_DES" | boxes -d dog
 #apt install -y systemd-shim
