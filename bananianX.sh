@@ -48,7 +48,7 @@ RESTART="OK, I'll reboot your banana in 10 minutes..."
 OPTIONAL_P="Installing optional packages..."
 NO_RESTART="OK. I won't restart :-("
 PLS_RESTART="But please restart the Pi with command (reboot) later."
-# Declare install variables
+# Declare install variables; please do not change if you don't know what that is
 # Optional packages:
 OPTPACK_APT=sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator gksudo
 #If you don't know what you are doing, don't edit after this line!
