@@ -75,13 +75,13 @@ exit 130
 ;;
 1)
 echo "Hi! I'll install LIGHT"
- ;;
+;;
 2)
 echo "Hi! I'll install FULL!"
-            ;;
+;;
 3)
 echo "Ok. No restart after LIGHT installation is finished"
-            ;;
+;;
 4)
 echo "No restart after FULL installation is finished."
 ;;
@@ -120,7 +120,7 @@ echo -e "\n\t$OPTIONAL_P" | boxes -d dog
 apt install -y $OPTPACK_APT
 echo -e "\n\t$RESTART" | boxes -d dog
 shutdown -r 10
- ;;
+;;
 3)
 echo "$NO_RESTART"
 sleep 2
