@@ -1,4 +1,7 @@
 #!/bin/bash
+
+echo "WARNING: This skript is in BETA state so it might not work as it should!"
+sleep 3
 # Init
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
@@ -9,7 +12,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-#Version 2.2
+#Ver. 2.3 BETA
 
 #Declare Variables
 # How high is our dialog window:
