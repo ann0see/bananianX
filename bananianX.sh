@@ -12,7 +12,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-#Ver. 2.3 BETA
+#Ver. 2.4 BETA
 
 #Declare Variables
 # How high is our dialog window:
@@ -23,16 +23,17 @@ CHOICE_HEIGHT=0
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
-MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. It may take some time, but please wait and don't leave the Pi alone for now. You can leave the installer alone if you're told so. There are 2 Versions of BananianX: the lightweighter BananianX LIGHT or BananianX FULL with more features. After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
+MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. It may take some time, but please wait and don't leave the Pi alone for now. You can leave the installer alone if you're told so. There are 3 Versions of BananianX: the lightweighter BananianX LIGHT, BananianX FULL with more features and BananianX MEDIUM (does not include all FULL features, but only the ones which are important for a multiuser system). After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
 GETREADY="Getting ready..."
 WAITMTST="Please wait... this might take some time..."
 NOTLVALN="Please do not leave this skript unattended until you are told to do so..."
 RLPLIST="Reloading packet list..."
 MENU="Choose one of the following options:"
-OPTIONS=(1 "Option 1: BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
-2 "Option 2: BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
-3 "Option 3: Don't reboot after installing BananianX LIGHT (Not recommended)"
-4 "Install BananianX FULL without reboot. (Not recommended)")
+OPTIONS=(1 "BananianX LIGHT (only packets you really need-> less features, takes not as long as Option 2 to install, uses less disk space)"
+2 "BananianX FULL (everything-> more features, but takes longer to install, uses more disk space) (recommended)"
+3 "Don't reboot after installing BananianX LIGHT (Not recommended)"
+4 "Install BananianX FULL without reboot. (Not recommended)"
+5 "Install BananianX MEDIUM (less features then FULL, only LIGHT + Features for multiuser system")
 INSTALLDOGGY="Install 'Doggy' ;-)..."
 INTRODOGGY="Hi! I'm Doggy. I'll install the GUI for you. OK. Let's start..."
 UPDATEMSG="Let me update..."
@@ -51,6 +52,7 @@ PLS_RESTART="But please restart the Pi with command (reboot) later."
 # Declare install variables; please do not change if you don't know what that is
 # Optional packages:
 OPTPACK_APT="sudo gparted xrdp mc iceweasel pcmanfm avahi-daemon xarchiver galculator gksudo"
+OPTPACK_MED_APT="sudo gksudo"
 #If you don't know what you are doing, don't edit after this line!
 ######################################
 
@@ -88,6 +90,47 @@ echo "Ok. No restart after LIGHT installation is finished"
 4)
 echo "No restart after FULL installation is finished."
 ;;
+5)
+echo "Install MEDIUM installation, which makes multiuser support easier."
+echo
+echo "Would you like to add a new user [y/n]?"
+read ans
+
+if [ $ans = y -o $ans = Y -o $ans = yes -o $ans = Yes -o $ans = YES ]
+then
+
+echo "How do you want to name the user?"
+echo "Do not use special charakters."
+read CR_USERNA
+echo "Your new user will be called $CR_USERNA"
+sleep 2
+echo "Adding user... Please enter password if you are told to do so..."
+adduser $CR_USERNA
+
+echo "Would you like to make $CR_USERNA an administrator [y/n]?"
+read ans
+
+if [ $ans = y -o $ans = Y -o $ans = yes -o $ans = Yes -o $ans = YES ]
+then
+apt install sudo
+sleep 2
+adduser $CR_USERNA sudo
+fi
+
+
+if [ $ans = n -o $ans = N -o $ans = no -o $ans = No -o $ans = NO ]
+then
+echo "Will not make $CR_USERNA an administrator."
+fi
+
+fi # OF want to add a new user?
+
+if [ $ans = n -o $ans = N -o $ans = no -o $ans = No -o $ans = NO ]
+then
+echo "Won't add a user."
+fi
+
+;; 
 *)
 echo "WARNING: Variable 'CHOICE' has unexpected content: >$CHOICE<. Install BananianX LIGHT without reboot!..."
 ;;
@@ -141,6 +184,12 @@ echo "$PLS_RESTART"
 sleep 5
 exit 0
 ;;
+5)
+echo -e "\n\t$OPTIONAL_P" | boxes -d dog
+apt install gksudo
+sleep 2
+echo -e "\n\t$RESTART" | boxes -d dog
+shutdown -r 10
 *)
 echo "WARNING: Variable 'CHOICE' has unexpected content."
 exit 21
