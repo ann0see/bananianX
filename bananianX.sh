@@ -38,7 +38,7 @@ INTRODOGGY="Hi! I'm Doggy. I'll install the GUI for you. OK. Let's start..."
 UPDATEMSG="Let me update..."
 LETALONE="Oh, now you can leave me alone. I'll restart the Pi 10 minutes after the script is finished."
 INST_LIGHTDM="Installing lightdm..."
-INST_LXDE="Installing xfce..."
+INST_XFCE="Installing xfce..."
 INST_XINIT="OK, install xinit..."
 DES_XINIT="Xinit allows you to start the X-Server with 'startx'..."
 INST_OPENBOX="Installing openbox window manager..."
@@ -102,7 +102,7 @@ echo "Install X server Xorg"
 apt install -y xorg
 echo "$INST_LIGHTDM"
 apt install -y lightdm
-echo "$INST_LXDE"
+echo "$INST_XFCE"
 apt install -y xfce4
 echo "$INST_XINIT"
 echo -e "\n\t$DES_XINIT" | boxes -d dog
