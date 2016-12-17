@@ -23,7 +23,7 @@ CHOICE_HEIGHT=0
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
-MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, LXDE, Openbox) on your Banana Pi. It may take some time, but please wait and don't leave the Pi alone for now. You can leave the installer alone if you're told so. There are 2 Versions of BananianX: the lightweighter BananianX LIGHT or BananianX FULL with more features. After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
+MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, xfce4) on your Banana Pi. It may take some time, but please wait and don't leave the Pi alone for now. You can leave the installer alone if you're told so. There are 2 Versions of BananianX: the lightweighter BananianX LIGHT or BananianX FULL with more features. After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
 GETREADY="Getting ready..."
 WAITMTST="Please wait... this might take some time..."
 NOTLVALN="Please do not leave this skript unattended until you are told to do so..."
@@ -103,12 +103,10 @@ apt install -y xorg
 echo "$INST_LIGHTDM"
 apt install -y lightdm
 echo "$INST_LXDE"
-apt install -y lxde-core
+apt install -y xfce4
 echo "$INST_XINIT"
 echo -e "\n\t$DES_XINIT" | boxes -d dog
 apt install -y xinit
-echo "$INST_OPENBOX"
-apt install -y openbox
 # uncomment the following lines, if your init system is systemd. If you don't know, let it like it is.
 #echo "$SETUP_X"
 #echo -e "\n\t$SETUP_X_DES" | boxes -d dog

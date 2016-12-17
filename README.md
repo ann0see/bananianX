@@ -1,5 +1,5 @@
 # BananianX
-Here is a script, which installs GUI on bananian. It installs LightDM, LXDE and Openbox.<br>
+Here is a script, which installs GUI on bananian. It installs LightDM, and xfce4.<br>
 Why have I made it? Because I thought there are many people who would like to have a graphical interface on their Banana Pi. Bananian was made for a lightweight Banana Pi, so there's no GUI. Bananian was made for servers, which usually don't need a GUI. But sometimes a GUI is useful. So I made this script. It is available in English.  
 <h2>How to install?</h2>
 1. Download bananianX: wget https://raw.githubusercontent.com/jonisc/bananianX/master/bananianX.sh<br>
