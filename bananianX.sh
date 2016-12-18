@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "WARNING: This skript is in BETA state so it might not work as it should!"
-sleep 3
 # Init
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
@@ -12,7 +10,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-#Ver. 2.3 BETA
+#Ver. 3 
 
 #Declare Variables
 # How high is our dialog window:
@@ -57,11 +55,15 @@ OPTPACK_APT="sudo gparted mc iceweasel pcmanfm avahi-daemon xarchiver galculator
 #DIALOG INTRODUCTION
 
 echo "$MESSAGETEXT"
-sleep 4
+sleep 2
+echo
 echo "$GETREADY"
+echo
 echo "$WAITMTST"
+echo
 echo "$NOTLVALN"
 sleep 1
+echo
 echo "$RLPLIST"
 apt -qq update
 apt -qq install dialog
@@ -140,7 +142,8 @@ sleep 5
 exit 0
 ;;
 *)
-echo "WARNING: Variable 'CHOICE' has unexpected content."
+echo "WARNING: Variable 'CHOICE' has unexpected content:"
+echo $CHOICE
 exit 21
 ;;
 esac
