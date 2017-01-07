@@ -7,7 +7,7 @@ Why have I made it? Because I thought there are many people who would like to ha
 3. Run it ./bananianX.sh
 4. Wait...
 <br>
-BananianX is in BETA state currently. So it might NOT work as expected for now. Currently I haven´t installed it yet, but you can install it and try it now.<br>
+BananianX is in gamma state currently. So it might NOT work as expected for now.<br>
 Website: https://jonisc.github.io/bananianX/ 
 <br>
 Thanks to: rvdns11 and Wolf2000 (German BananaPi Forum)
