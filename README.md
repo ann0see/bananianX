@@ -13,3 +13,4 @@ BananianX is in gamma state and not actively developed. So it might NOT work as 
 Website: https://ann0see.github.io/bananianX/
 <br>
 Thanks to: rvdns11 and Wolf2000 (German BananaPi Forum) for testing and help!
+And berkleeb for using my script differently: https://harpologist.wordpress.com/2017/05/18/using-waveshare-touchscreen-with-banana-pi/ 
