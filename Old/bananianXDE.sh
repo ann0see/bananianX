@@ -77,7 +77,8 @@ apt-get install -y xinit
 echo "Installiere openbox Window Manager..."
 
 apt-get install -y openbox
-echo "Konfiguriere X..."
+
+echo "Konfiguriere X..."
 
 
 echo -e "\n\tKonfiguriere X, sodass ein normaler Benutzer den Pi Herunterfahren kann." | boxes -d dog
@@ -87,7 +88,8 @@ apt-get install -y systemd-shim
 echo "session required pam_systemd.so" >> /etc/pam.d/lxdm
 
 clear
-case $CHOICE in
+
+case $CHOICE in
         1)
 echo -e "\n\Fertig! Ich starte die Banane in 10 Minuten neu." | boxes -d dog
 
@@ -113,4 +115,4 @@ exit
             ;;
 esac
 
-#Jonathan Smith-Chung
+#ann0see
