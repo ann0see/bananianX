@@ -1,12 +1,7 @@
 #!/bin/bash
 #....
 # Please delete the following line if you want to test this script
-echo "ATTENTION: This script is not actively developed. Therefore it could have dangerous bugs. Since Bananian has been abandoned I discourage anybody from using it (including my script.)"
-echo "If you still want to use this script, please delete the line 'exit 1' in this file."
-echo "Exiting..."
-##Please delete the following line if you want to test this script:
-exit 1 # Delete me
-########
+echo "ATTENTION: This script is not actively developed. Therefore it could have dangerous bugs. Since Bananian has been abandoned I discourage anybody from using it (and my script)."
 
 # Make sure only root can run our script
 if [[ $EUID -ne 0 ]]; then
