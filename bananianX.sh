@@ -1,12 +1,20 @@
 #!/bin/bash
 #....
+# Please delete the following line if you want to test this script
+echo "ATTENTION: This script is not actively developed. Therefore it could have dangerous bugs. Since Bananian has been abandoned I discourage anybody from using it (including my script.)"
+echo "If you still want to use this script, please delete the line 'exit 1' in this file."
+echo "Exiting..."
+##Please delete the following line if you want to test this script:
+exit 1 # Delete me
+########
+
 # Make sure only root can run our script
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root. Please try 'sudo ./bananianX.sh'" 1>&2 
    exit 1
 fi
 
-#Ver. 3 
+#Ver. 3.1
 
 #Declare Variables
 # How high is our dialog window:
@@ -17,7 +25,7 @@ CHOICE_HEIGHT=0
 BACKTITLE="BananianX installer"
 TITLE="Install BananianX"
 MESSAGETITLE="Message"
-MESSAGETEXT="Hi. This script will install a GUI (LIGHTDM, xfce4) on your Banana Pi. It may take some time, but please wait and don't leave the Pi alone for now. You can leave the installer alone if you're told so. There are 2 Versions of BananianX: the lightweighter BananianX LIGHT or BananianX FULL with more features. After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
+MESSAGETEXT="ATTENTION: This script is not actively developed. Therefore it could have dangerous bugs. Hi. This script will install a GUI (LIGHTDM, xfce4) on your Banana Pi. It may take some time, but please wait and don't leave the Pi alone for now. You can leave the installer alone if you're told so. There are 2 Versions of BananianX: the lightweighter (?) BananianX LIGHT or BananianX FULL with more features. After the script is finished, the Pi will restart within 10 minutes. You can abort the reboot."
 GETREADY="Getting ready..."
 WAITMTST="Please wait... this might take some time..."
 NOTLVALN="Please do not leave this skript unattended until you are told to do so..."
@@ -144,5 +152,5 @@ exit 21
 ;;
 esac
 
-#jonisc
+#ann0see
 
