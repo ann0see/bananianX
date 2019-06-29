@@ -4,9 +4,9 @@ The goal of this script is to provide an easy solution to install a graphical us
 Possibly this script still works on some Debian distros I don't know. Feel free to fork and update this repo. Please include credit if you want to release the software and contact me.
 
 <h2>How to install?</h2>
-1. Download bananianX: wget https://raw.githubusercontent.com/ann0see/bananianX/master/bananianX.sh<br>
+1. Download BananianX: wget https://raw.githubusercontent.com/ann0see/bananianX/master/bananianX.sh<br>
 2. Make it executable: chmod +x bananianX.sh<br>
-3. Run it ./bananianX.sh
+3. Run it ./bananianX.<br>
 4. Wait...
 <br>
 BananianX is in gamma state and not actively developed. So it might NOT work as expected.<br>
