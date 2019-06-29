@@ -1,7 +1,7 @@
 # BananianX
 ## ATTENTION: This script is not actively developed!
 The goal of this script is to provide an easy solution to install a graphical user interface (GUI) on Bananian (LightDM and xfce4), a special Linux Distro for Banana Pi board. Since [Bananian has been abandoned](https://www.bananian.org/news#the_end_-_2017-04-02) and not many people were actually interested in this project, I decided not to develop the script further. While it should work on the last version of Bananian, I discourage anybody from using it. Bananian and BananianX don't get any updates anymore and could have critical bugs including security issues.
-Possibly this script still works on some Debian distros I don't know. Feel free to update and fork this repo. Please include credit if you want to release the software and contact me.
+Possibly this script still works on some Debian distros I don't know. Feel free to fork and update this repo. Please include credit if you want to release the software and contact me.
 
 <h2>How to install?</h2>
 1. Download bananianX: wget https://raw.githubusercontent.com/ann0see/bananianX/master/bananianX.sh<br>
